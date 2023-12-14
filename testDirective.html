@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Vue Js Deritive</title>
+  </head>
+  <body>
+    <div class="container">
+      <center>
+        <h1>Info</h1>
+        <hr />
+      </center>
+      <div class="row">
+        <!-- First Part (Column) -->
+        <div class="col-md-4" id="part1">
+          <center>
+            <h2>{{text}}</h2>
+          </center>
+          <p v-html="info.colorname">Name:</p>
+          <h3 v-text="myinto"></h3>
+          <label for="">Image</label>
+          <!-- img bind need img tag with src -->
+          <img v-bind:src="info.image" alt="" srcset="" />
+          <p>Name: {{info.name}}</p>
+          <p>Email: {{info.email}}</p>
+          <p>Contact: {{info.contact}}</p>
+          <a v-bind:href="info.github">My GitHub</a>
+        </div>
+
+        <!-- Second Part (Column) -->
+        <div class="col-md-4" id="part2">
+          <h2>{{intro}}</h2>
+          <h3>Enjoy Count:{{count}}</h3>
+          <button class="mr-4" @click="increase()">Increase</button>
+          <button @click="decrease()">Decrease</button>
+          <br />
+          <br />
+          <h3>Contact Information</h3>
+          <h4>Search for:{{search_input}}</h4>
+          <input v-model="search_input" type="text" />
+          <hr />
+          <br />
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Contact</th>
+              <th>Age</th>
+            </tr>
+            
+            <tr v-for="item in searchData()">
+              <td>{{item.name}}</td>
+              <td>{{item.email}}</td>
+              <td>{{item.contact}}</td>
+              <td>{{item.age}}</td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-md-4" id="part3">
+          <h2>Events Work</h2>
+          <p>{{event}}</p>
+          <button class="mb-4" @click="alarm()">Dont Click</button> <br />
+          <button @click="test">Mouse Event</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="testDirective.js"></script>
+    <script src="testDirectPart2.js"></script>
+    <script src="testDirPart3.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

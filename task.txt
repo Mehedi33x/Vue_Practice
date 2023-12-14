@@ -1,0 +1,6 @@
+//v-html & v-text done
+// v-bind done
+// v-model done
+// v-for done
+//@click done
+// v-if else
